@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Tarefas - Início</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="controlador.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <h1>Controle de Tarefas</h1>
+        <nav>
+            <button id="btn-adicionar">Adicionar</button>
+            <button id="btn-listar">Listar</button>
+            <button id="btn-filtrar">Filtrar</button>
+            <button id="btn-sair">Sair</button>
+        </nav>
+    </header>
+    <main>
+        <!-- TELA 1: LISTAR TAREFAS (Visível por padrão) -->
+        <section id="tela-listar">
+            <h2>Minhas Tarefas</h2>
+            <div id="lista-tarefas-container" class="lista-tarefas">
+                <p>Aqui aparecerão as tarefas cadastradas...</p>
+                <!-- O botão editar e excluir geralmente ficam ao lado de cada tarefa na lista -->
+            </div>
+        </section>
+
+        <!-- TELA 2: ADICIONAR TAREFA (Oculta) -->
+        <section id="tela-adicionar" class="oculto">
+            <h2>Nova Tarefa</h2>
+            <form id="form-tarefa">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" required>
+                
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao"></textarea>
+                
+                <label for="prazo">Prazo:</label>
+                <input type="date" id="prazo">
+                
+                <button type="submit">Salvar Tarefa</button>
+            </form>
+        </section>
+
+        <!-- TELA 3: FILTRAR TAREFAS (Oculta) -->
+        <section id="tela-filtrar" class="oculto">
+            <h2>Filtrar Tarefas</h2>
+            <label for="filtro-status">Status:</label>
+            <select id="filtro-status">
+                <option value="TODOS">Todos</option>
+                <option value="PENDENTE">Pendente</option>
+                <option value="EM_ANDAMENTO">Em Andamento</option>
+                <option value="CONCLUIDA">Concluída</option>
+            </select>
+            <button id="btn-aplicar-filtro">Aplicar Filtro</button>
+        </section>
+    </main>
+</body>
+</html>

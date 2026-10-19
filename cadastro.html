@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Tarefas - Cadastro</title>
+
+   <link rel="stylesheet" href="style.css">
+   <script src="usuario.js" defer></script>
+
+</head>
+<body>
+    
+    <header>
+        <h1>Cadastro</h1>
+    </header>
+    <main>
+        <div id="caixaCadastro">
+
+            <form id="form-cadastro">
+                <label for="cad-nome">Nome: </label>
+                <input type="text" id="cad-nome" required>
+
+                <label for="cad-email">Email: </label>
+                <input type="email" id="cad-email" required>
+
+                <label for="cad-senha">Senha: </label>
+                <input type="password" id="cad-senha" required>
+
+                <input type="submit" value="Cadastrar">
+            </form>
+            <br>
+            <button id="btn-voltar-login" type="button">Já tenho conta (Login)</button>
+        </div>
+    </main>
+
+</body>
+</html>

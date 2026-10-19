@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Tarefas - Login</title>
+
+   <link rel="stylesheet" href="style.css">
+   <script src="usuario.js" defer></script>
+
+</head>
+<body>
+    
+    <header>
+        <h1>Login</h1>
+    </header>
+    <main>
+        <div id="caixaIndex">
+            <form id="form-login">
+                <div id="loginIndex">
+                    <label for="login-email">Email: </label>
+                    <input type="email" id="login-email" required>
+
+                    <label for="login-senha">Senha: </label>
+                    <input type="password" id="login-senha" required>
+                </div>
+                
+                <br>
+                <button type="submit">Entrar</button>
+            </form>
+
+            <div id="trcSenhaIndex">
+                <p>Esqueceu sua senha?</p>
+                <button type="button" id="btn-trocar-senha">Trocar Senha</button>
+            </div>
+
+            <div id="cadastroIndex">
+                <p>Ainda não se cadastrou?</p>
+                <button type="button" id="btn-ir-cadastro">Clique Aqui</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
