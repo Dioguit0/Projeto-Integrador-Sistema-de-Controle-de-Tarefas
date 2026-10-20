@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Salva de volta no localStorage
             localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
+            
             alert('Cadastro realizado com sucesso! Você será redirecionado para o login.');
             window.location.href = 'index.html';
         });
@@ -47,9 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+
     // === Tela de Login ===
     const formLogin = document.getElementById('form-login');
     const btnIrCadastro = document.getElementById('btn-ir-cadastro');
+    const btnTrocarSenha = document.getElementById('btn-trocar-senha');
 
     if (formLogin) {
         formLogin.addEventListener('submit', (event) => {
@@ -79,6 +82,44 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnIrCadastro) {
         btnIrCadastro.addEventListener('click', () => {
             window.location.href = 'cadastro.html';
+        });
+    }
+
+    if (btnTrocarSenha) {
+        btnTrocarSenha.addEventListener('click', () => {
+            window.location.href = 'trocarSenha.html';
+        });
+    }
+
+    // === Tela de Redefinição de Senha ===
+    const formTrocarSenha = document.getElementById('form-trocar-senha');
+
+    if (formTrocarSenha) {
+        formTrocarSenha.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const emailInput = document.getElementById('troca-email').value.trim().toLowerCase();
+            const novaSenha = document.getElementById('troca-nova-senha').value;
+            const confirmaSenha = document.getElementById('troca-confirma-senha').value;
+
+            if (novaSenha !== confirmaSenha) {
+                alert('As senhas digitadas não coincidem. Digite novamente.');
+                return;
+            }
+
+            const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+            const usuario = usuarios.find(u => u.email === emailInput);
+
+            if (!usuario) {
+                alert('Nenhum usuário foi encontrado com este e-mail.');
+                return;
+            }
+
+            usuario.senha = novaSenha;
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+            alert('Senha alterada com sucesso!');
+            window.location.href = 'index.html';
         });
     }
 
